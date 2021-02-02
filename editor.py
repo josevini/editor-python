@@ -99,4 +99,3 @@ def menu():
             break
         elif op == 1:
             menuCriar()
-
