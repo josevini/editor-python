@@ -98,5 +98,5 @@ def menu():
         if op == 0:
             break
         elif op == 1:
-            criar()
+            menuCriar()
 
