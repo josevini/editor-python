@@ -69,7 +69,7 @@ def criarPasta():
             atrasar('Ops! Pasta encontrada, tente outro nome!', 1.3)
             desenha('-', 42)
 
-def criar():
+def menuCriar():
     while True:
         desenha('-', 42)
         print("""Deseja criar um arquivo ou uma pasta?
