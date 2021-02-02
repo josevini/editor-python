@@ -34,13 +34,13 @@ def entradaTexto(msg=''):
     return valor
 
 def pergunta(msg=''):
-    resp = input(msg).lower()[0]
+    resp = input(msg).lower()
     if resp == 's':
         return True
     elif resp == 'n':
         return False
     else:
-        print('Opção inválida!')
+        atrasar(mudaCor('Opção inválida!', 'red'))
 
 def entrada(msg=''):
     while True:
@@ -75,15 +75,19 @@ def criarArquivo():
 def criarPasta():
     while True:
         dirname = entradaTexto('Informe o nome da pasta: ')
-        atrasar(mudaCor(f'Criando a pasta {dirname}...', 'yellow'), 1.5)
-        try:
-            os.mkdir(dirname)
-            atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'), 1.3)
+        resp = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+        if resp:
+            atrasar(mudaCor(f'Criando a pasta {dirname}...', 'yellow'), 1.5)
+            try:
+                os.mkdir(dirname)
+                atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'), 1.3)
+                break
+            except FileExistsError as erro:
+                atrasar(mudaCor('Ops! Pasta encontrada, tente outro nome!', 'yellow'), 1.3)
+                desenha('-', 42)
+        else:
+            atrasar(mudaCor('Cancelando...', 'red'), 1.3)
             break
-        except FileExistsError as erro:
-            atrasar(mudaCor('Ops! Pasta encontrada, tente outro nome!', 'yellow'), 1.3)
-            desenha('-', 42)
-
 def menuCriar():
     while True:
         desenha('-', 42)
