@@ -17,13 +17,13 @@ def mensagem(msg='', char='-'):
 
 def mudaCor(text='', cor='preto'):
     cores = {
-        'preto': '\033[30m',
-        'vermelho': '\033[31m',
-        'verde': '\033[32m',
-        'amarelo': '\033[33m',
-        'azul': '\033[34m',
-        'roxo': '\033[35m',
-        'cinza': '\033[37m'
+        'black': '\033[30m',
+        'red': '\033[31m',
+        'green': '\033[32m',
+        'yellow': '\033[33m',
+        'blue': '\033[34m',
+        'purple': '\033[35m',
+        'gray': '\033[37m'
     }
     abre = cores[cor]
     fecha = '\033[m'
@@ -48,40 +48,40 @@ def entrada(msg=''):
         try:
             return int(valor)
         except Exception as erro:
-            atrasar(mudaCor('Digite um número válido!', 'vermelho'))
+            atrasar(mudaCor('Digite um número válido!', 'red'))
 
 def intervalo(valor, min, max):
     if min <= valor <= max:
         return valor
-    print(mudaCor(f'Digite um valor entre {min} e {max}', 'vermelho'))
+    print(mudaCor(f'Digite um valor entre {min} e {max}', 'red'))
 
 def criarArquivo():
     nome, ext = os.path.splitext(entradaTexto('Informe o nome do arquivo: '))
     filename = (nome + ext) if ext else (nome + '.txt')
-    atrasar(mudaCor('Processando...', 'amarelo'), 1.3)
+    atrasar(mudaCor('Processando...', 'yellow'), 1.3)
     if os.path.exists(filename):
-        resp = pergunta(mudaCor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'amarelo'))
+        resp = pergunta(mudaCor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
         if resp:
-            atrasar(mudaCor(f'Criando arquivo {filename}...', 'amarelo'), 1.5)
+            atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
             file = open(filename, 'w', encoding='utf-8')
-            atrasar(mudaCor(f'Arquivo {filename} criado!', 'verde'), 1.3)
+            atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
         else:
-            atrasar(mudaCor('Nenhum arquivo foi criado!', 'vermelho'), 1.3)
+            atrasar(mudaCor('Nenhum arquivo foi criado!', 'red'), 1.3)
     else:
-        atrasar(mudaCor(f'Criando arquivo {filename}...', 'amarelo'), 1.5)
+        atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
         file = open(filename, 'w', encoding='utf-8')
-        atrasar(mudaCor(f'Arquivo {filename} criado!', 'verde'), 1.3)
+        atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
 
 def criarPasta():
     while True:
         dirname = entradaTexto('Informe o nome da pasta: ')
-        atrasar(mudaCor(f'Criando a pasta {dirname}...', 'amarelo'), 1.5)
+        atrasar(mudaCor(f'Criando a pasta {dirname}...', 'yellow'), 1.5)
         try:
             os.mkdir(dirname)
-            atrasar(mudaCor(f'Pasta {dirname} criada!', 'verde'), 1.3)
+            atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'), 1.3)
             break
         except FileExistsError as erro:
-            atrasar(mudaCor('Ops! Pasta encontrada, tente outro nome!', 'amarelo'), 1.3)
+            atrasar(mudaCor('Ops! Pasta encontrada, tente outro nome!', 'yellow'), 1.3)
             desenha('-', 42)
 
 def menuCriar():
@@ -94,7 +94,7 @@ def menuCriar():
         desenha('-', 42)
         op = intervalo(entrada('Escolha uma opção: '), 0, 2)
         if op == 0:
-            atrasar(mudaCor('Cancelando...', 'vermelho'), 1.3)
+            atrasar(mudaCor('Cancelando...', 'red'), 1.3)
             break
         elif op == 1:
             criarArquivo()
