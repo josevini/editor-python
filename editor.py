@@ -57,26 +57,30 @@ def intervalo(valor, min, max):
 
 def criarArquivo():
     nome, ext = os.path.splitext(entradaTexto('Informe o nome do arquivo: '))
-    filename = (nome + ext) if ext else (nome + '.txt')
-    atrasar(mudaCor('Processando...', 'yellow'), 1.3)
-    if os.path.exists(filename):
-        resp = pergunta(mudaCor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
-        if resp:
+    continuar = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+    if continuar:
+        filename = (nome + ext) if ext else (nome + '.txt')
+        atrasar(mudaCor('Processando...', 'yellow'), 1.3)
+        if os.path.exists(filename):
+            resp = pergunta(mudaCor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
+            if resp:
+                atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
+                file = open(filename, 'w', encoding='utf-8')
+                atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
+            else:
+                atrasar(mudaCor('Nenhum arquivo foi criado!', 'red'), 1.3)
+        else:
             atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
             file = open(filename, 'w', encoding='utf-8')
             atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
-        else:
-            atrasar(mudaCor('Nenhum arquivo foi criado!', 'red'), 1.3)
     else:
-        atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
-        file = open(filename, 'w', encoding='utf-8')
-        atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
+        atrasar(mudaCor('Cancelando...', 'red'), 1.3)
 
 def criarPasta():
     while True:
         dirname = entradaTexto('Informe o nome da pasta: ')
-        resp = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
-        if resp:
+        continuar = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+        if continuar:
             atrasar(mudaCor(f'Criando a pasta {dirname}...', 'yellow'), 1.5)
             try:
                 os.mkdir(dirname)
