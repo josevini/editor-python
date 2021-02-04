@@ -16,4 +16,4 @@ def menu():
         elif op == 1:
             menuCriar()
         elif op == 2:
-            atrasar('Apagar...', 0)
+            menuApagar()
