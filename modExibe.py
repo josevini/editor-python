@@ -13,7 +13,7 @@ def mensagem(msg='', char='-'):
     print(f'{msg.center(tamanho)}')
     desenha(char, tamanho)
 
-def mudaCor(text='', cor='preto'):
+def mudaCor(text='', cor='black'):
     cores = {
         'black': '\033[30m',
         'red': '\033[31m',
