@@ -12,13 +12,13 @@ def apagarArquivo():
             continuar = pergunta(mudaCor('O arquivo não está vazio, quer continuar? [s/n]: ', 'yellow'))
             if continuar:
                 os.remove(filename)
-                atrasar(mudaCor(f'Apagando o arquivo {filename}...', 'yellow'), 1.5)
+                atrasar(mudaCor(f'Apagando o arquivo {filename}...', 'yellow'), 1.3)
                 atrasar(mudaCor(f'Arquivo {filename} apagado!', 'green'))
             else:
                 atrasar(mudaCor('Nenhum arquivo foi apagado!', 'red'))
         else:
             os.remove(filename)
-            atrasar(mudaCor(f'Apagando o arquivo {filename}...', 'yellow'), 1.5)
+            atrasar(mudaCor(f'Apagando o arquivo {filename}...', 'yellow'), 1.3)
             atrasar(mudaCor(f'Arquivo {filename} apagado!', 'green'))
     else:
         atrasar(mudaCor('Arquivo não encontrado!', 'red'))
