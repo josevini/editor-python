@@ -1,4 +1,5 @@
 from modCriar import *
+from modApagar import *
 
 def menu():
     while True:
@@ -14,3 +15,5 @@ def menu():
             break
         elif op == 1:
             menuCriar()
+        elif op == 2:
+            atrasar('Apagar...', 0)
