@@ -18,5 +18,5 @@ def entrada(msg=''):
         valor = input(msg)
         try:
             return int(valor)
-        except Exception as erro:
+        except ValueError as erro:
             atrasar(mudaCor('Digite um número válido!', 'red'))
