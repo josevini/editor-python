@@ -15,13 +15,13 @@ def criarArquivo():
             if os.path.exists(filename):
                 resp = pergunta(mudaCor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
                 if resp:
-                    atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
+                    atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.3)
                     file = open(filename, 'w', encoding='utf-8')
                     atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
                 else:
                     atrasar(mudaCor('Nenhum arquivo foi criado!', 'red'), 1.3)
             else:
-                atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.5)
+                atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.3)
                 file = open(filename, 'w', encoding='utf-8')
                 atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'), 1.3)
         else:
