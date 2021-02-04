@@ -26,3 +26,8 @@ def mudaCor(text='', cor='preto'):
     abre = cores[cor]
     fecha = '\033[m'
     return f'{abre}{text}{fecha}'
+
+def intervalo(valor, min, max):
+    if min <= valor <= max:
+        return valor
+    print(mudaCor(f'Digite um valor entre {min} e {max}', 'red'))
