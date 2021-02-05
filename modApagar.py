@@ -26,6 +26,16 @@ def apagarArquivo():
 def apagarPasta():
     dirname = entradaTexto('Informe o nome da pasta: ')
     continuar = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+    if continuar:
+        atrasar(mudaCor(f'A a pasta {dirname}...', 'yellow'), 1.3)
+        try:
+            os.mkdir(dirname)
+            atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'))
+        except FileNotFoundError as erro:
+            atrasar(mudaCor('Essa pasta não existe!', 'yellow'))
+            desenha('-', 42)
+    else:
+        atrasar(mudaCor('Cancelando...', 'red'))
 
 def menuApagar():
     while True:
@@ -42,4 +52,4 @@ def menuApagar():
         elif op == 1:
             apagarArquivo()
         elif op == 2:
-            print('Apagar pasta...')
+            apagarPasta()
