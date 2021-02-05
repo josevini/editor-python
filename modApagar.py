@@ -23,6 +23,10 @@ def apagarArquivo():
     else:
         atrasar(mudaCor('Arquivo não encontrado!', 'red'))
 
+def apagarPasta():
+    dirname = entradaTexto('Informe o nome da pasta: ')
+    continuar = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+
 def menuApagar():
     while True:
         desenha('-', 42)
