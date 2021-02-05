@@ -27,13 +27,12 @@ def apagarPasta():
     dirname = entradaTexto('Informe o nome da pasta: ')
     continuar = pergunta(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
     if continuar:
-        atrasar(mudaCor(f'A a pasta {dirname}...', 'yellow'), 1.3)
+        atrasar(mudaCor(f'Apagando a pasta {dirname}...', 'yellow'), 1.3)
         try:
-            os.mkdir(dirname)
-            atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'))
+            os.rmdir(dirname)
+            atrasar(mudaCor(f'Pasta {dirname} apagada!', 'green'))
         except FileNotFoundError as erro:
-            atrasar(mudaCor('Essa pasta não existe!', 'yellow'))
-            desenha('-', 42)
+            atrasar(mudaCor('Essa pasta não existe!', 'red'))
     else:
         atrasar(mudaCor('Cancelando...', 'red'))
 
