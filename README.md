@@ -1,2 +1,2 @@
 # editor python
- Este repositório contem um programa que manipula pastas e arquivos utilizando comandos da linguagem python
+ Este repositório contem um programa feito em python que manipula arquivos e diretórios.
