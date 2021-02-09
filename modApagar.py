@@ -34,7 +34,7 @@ def apagarPasta():
         except FileNotFoundError as erro:
             atrasar(mudaCor('Essa pasta não existe!', 'red'))
         except OSError:
-            atrasar(mudaCor('A pasta não está vazia!'))
+            atrasar(mudaCor('A pasta não está vazia!', 'red'))
     else:
         atrasar(mudaCor('Cancelando...', 'red'))
 
