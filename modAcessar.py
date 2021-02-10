@@ -6,8 +6,5 @@ from modExibe import *
 def menuAcessar():
     while True:
         desenha('-', 42)
-        print("""Deseja acessar um arquivo ou pasta?
-1 - Arquivo
-2 - Pasta
-0 - Cancelar""")
+        geraMenu('arquivo', 'pasta', msg='Deseja acessar um arquivo ou pasta? ')
         break
