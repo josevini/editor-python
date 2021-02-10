@@ -1,5 +1,12 @@
 import time
 
+def geraMenu(*ops, stop='cancelar', msg=''):
+    if msg:
+        print(msg)
+    for pos, op in enumerate(ops):
+        print(f'{pos + 1} - {op.capitalize()}')
+    print(f'0 - {stop.capitalize()}')
+
 def atrasar(msg='', seg=1.0):
     print(msg)
     time.sleep(seg)
