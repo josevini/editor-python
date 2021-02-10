@@ -41,10 +41,7 @@ def apagarPasta():
 def menuApagar():
     while True:
         desenha('-', 42)
-        print("""Deseja apagar um arquivo ou uma pasta?
-1 - Arquivo
-2 - Pasta
-0 - Cancelar""")
+        geraMenu('arquivo', 'pasta', msg='Deseja apagar um arquivo ou pasta? ')
         desenha('-', 42)
         op = intervalo(entrada('Escolha uma opção: '), 0, 2)
         if op == 0:
