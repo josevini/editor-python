@@ -11,7 +11,7 @@ def acessarArquivo():
             with open(filename, 'r', encoding='utf-8') as file:
                 desenha('-', 42)
                 atrasar('CONTEÚDO:', 0)
-                atrasar(mudaCor(file.read(), 'yellow'), 0)
+                exibir(mudaCor(file.read(), 'yellow'))
                 break
         except FileNotFoundError:
             atrasar(mudaCor('Arquivo não encontrado!', 'red'))
@@ -21,9 +21,10 @@ def acessarPasta():
         dirname = entradaTexto('Quer listar qual pasta: ')
         try:
             listagem = os.listdir(dirname)
-            print(listagem)
+            for dir in listagem:
+                atrasar()
         except FileNotFoundError:
-            atrasar(mudaCor('Pasta não encontrada!', 'red'))
+            exibir(mudaCor('Pasta não encontrada!', 'red'))
 
 def menuAcessar():
     while True:
