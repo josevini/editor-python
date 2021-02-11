@@ -7,6 +7,9 @@ def geraMenu(*ops, stop='cancelar', msg=''):
         print(f'{pos + 1} - {op.capitalize()}')
     print(f'0 - {stop.capitalize()}')
 
+def exibir(msg=''):
+    print(msg)
+
 def atrasar(msg='', seg=1.0):
     print(msg)
     time.sleep(seg)
