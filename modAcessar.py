@@ -11,7 +11,8 @@ def acessarArquivo():
             with open(filename, 'r', encoding='utf-8') as file:
                 desenha('-', 42)
                 atrasar('CONTEÚDO:', 0)
-                exibir(mudaCor(file.read(), 'blue'))
+                content = file.read()
+                exibir(mudaCor(content if content else 'Vazio!', 'blue'))
                 break
         except FileNotFoundError:
             atrasar(mudaCor('Arquivo não encontrado!', 'red'))
