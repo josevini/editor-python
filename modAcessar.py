@@ -7,8 +7,12 @@ def acessarArquivo():
     while True:
         nome, ext = os.path.splitext(entradaTexto('Quer ler qual arquivo: '))
         filename = (nome+ext) if ext else (nome+'.txt')
-        with open(filename, 'r', encoding='utf-8') as file:
-            print(file.read())
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                atrasar(mudaCor(file.read(), 'yellow'), 0)
+                break
+        except FileNotFoundError:
+            atrasar(mudaCor('Arquivo não encontrado!', 'red'))
 
 def menuAcessar():
     while True:
