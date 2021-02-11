@@ -12,7 +12,6 @@ def acessarArquivo():
                 desenha('-', 42)
                 atrasar('CONTEÚDO:', 0)
                 atrasar(mudaCor(file.read(), 'yellow'), 0)
-                desenha('-', 42)
                 break
         except FileNotFoundError:
             atrasar(mudaCor('Arquivo não encontrado!', 'red'))
