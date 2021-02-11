@@ -38,7 +38,7 @@ def criarPasta():
                 os.mkdir(dirname)
                 atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'))
                 break
-            except FileExistsError as erro:
+            except FileExistsError:
                 atrasar(mudaCor('Ops! Pasta encontrada, tente outro nome!', 'yellow'))
                 desenha('-', 42)
         else:
