@@ -16,6 +16,15 @@ def acessarArquivo():
         except FileNotFoundError:
             atrasar(mudaCor('Arquivo não encontrado!', 'red'))
 
+def acessarPasta():
+    while True:
+        dirname = entradaTexto('Quer listar qual pasta: ')
+        try:
+            listagem = os.listdir(dirname)
+            print(listagem)
+        except FileNotFoundError:
+            atrasar(mudaCor('Pasta não encontrada!', 'red'))
+
 def menuAcessar():
     while True:
         desenha('-', 42)
@@ -27,4 +36,4 @@ def menuAcessar():
         elif op == 1:
             acessarArquivo()
         elif op == 2:
-            pass
+            acessarPasta()
