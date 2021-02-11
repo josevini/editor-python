@@ -31,7 +31,7 @@ def apagarPasta():
         try:
             os.rmdir(dirname)
             atrasar(mudaCor(f'Pasta {dirname} apagada!', 'green'))
-        except FileNotFoundError as erro:
+        except FileNotFoundError:
             atrasar(mudaCor('Essa pasta não existe!', 'red'))
         except OSError:
             atrasar(mudaCor('A pasta não está vazia!', 'red'))
