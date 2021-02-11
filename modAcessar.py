@@ -19,7 +19,7 @@ def menuAcessar():
         if op == 0:
             break
         elif op == 1:
-            pass
+            acessarArquivo()
         elif op == 2:
             pass
         break
