@@ -16,3 +16,5 @@ def menu():
             menuApagar()
         elif op == 3:
             menuAcessar()
+        elif op == 4:
+            pass
