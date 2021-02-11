@@ -9,7 +9,10 @@ def acessarArquivo():
         filename = (nome+ext) if ext else (nome+'.txt')
         try:
             with open(filename, 'r', encoding='utf-8') as file:
+                desenha('-', 42)
+                atrasar('CONTEÚDO:', 0)
                 atrasar(mudaCor(file.read(), 'yellow'), 0)
+                desenha('-', 42)
                 break
         except FileNotFoundError:
             atrasar(mudaCor('Arquivo não encontrado!', 'red'))
@@ -26,4 +29,3 @@ def menuAcessar():
             acessarArquivo()
         elif op == 2:
             pass
-        break
