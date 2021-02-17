@@ -1,6 +1,7 @@
 from modCriar import *
 from modApagar import *
 from modAcessar import *
+from modEditar import *
 
 def menu():
     while True:
@@ -17,4 +18,4 @@ def menu():
         elif op == 3:
             menuAcessar()
         elif op == 4:
-            pass
+            menuEditar()
