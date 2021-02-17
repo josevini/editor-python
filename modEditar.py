@@ -5,5 +5,5 @@ from modExibe import *
 
 def menuEditar():
     desenha('-', 42)
-    geraMenu('')
-    atrasar('Editando...')
+    geraMenu('arquivo', 'pasta', msg='Deseja editar um arquivo ou pasta?')
+    desenha('-', 42)
