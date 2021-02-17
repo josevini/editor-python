@@ -4,7 +4,7 @@ def geraMenu(*ops, stop='cancelar', msg=''):
     if msg:
         print(msg)
     for pos, op in enumerate(ops):
-        print(f'{pos + 1} - {op.capitalize()}')
+        print(f'{pos + 1} - {op.capitalize() if op else "default"}')
     print(f'0 - {stop.capitalize()}')
 
 def exibir(msg=''):
