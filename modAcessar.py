@@ -40,6 +40,7 @@ def menuAcessar():
         desenha('-', 42)
         op = intervalo(entrada('Escolha uma opção: '), 0, 2)
         if op == 0:
+            atrasar(mudaCor('Cancelando...', 'red'))
             break
         elif op == 1:
             acessarArquivo()
