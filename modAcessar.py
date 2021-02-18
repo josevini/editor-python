@@ -3,10 +3,10 @@ import os.path
 from modEntrada import *
 from modExibe import *
 
-def acessarArquivo():
+def accessFile():
     while True:
-        nome, ext = os.path.splitext(getText('Quer ler qual arquivo: '))
-        filename = (nome+ext) if ext else (nome+'.txt')
+        name, ext = os.path.splitext(getText('Quer ler qual arquivo: '))
+        filename = (name + ext) if ext else (name + '.txt')
         try:
             with open(filename, 'r', encoding='utf-8') as file:
                 toDesign('-', 42)
@@ -17,15 +17,15 @@ def acessarArquivo():
         except FileNotFoundError:
             delay(changeColor('Arquivo não encontrado!', 'red'))
 
-def acessarPasta():
+def accessDir():
     while True:
         dirname = getText('Quer listar qual pasta: ')
         try:
-            listagem = os.listdir(dirname)
+            listingResult = os.listdir(dirname)
             toDesign('-', 42)
             show('CONTEÚDO:')
-            if listagem:
-                for dir in listagem:
+            if listingResult:
+                for dir in listingResult:
                     show(changeColor(dir, 'blue'))
             else:
                 show(changeColor('Vazio!', 'blue'))
@@ -33,7 +33,7 @@ def acessarPasta():
         except FileNotFoundError:
             delay(changeColor('Pasta não encontrada!', 'red'))
 
-def menuAcessar():
+def menuAccess():
     while True:
         toDesign('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja acessar um arquivo ou pasta?')
@@ -43,6 +43,6 @@ def menuAcessar():
             delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
-            acessarArquivo()
+            accessFile()
         elif op == 2:
-            acessarPasta()
+            accessDir()

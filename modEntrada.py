@@ -1,8 +1,8 @@
 from modExibe import *
 
 def getText(msg=''):
-    valor = input(msg)
-    return valor
+    value = input(msg)
+    return value
 
 def question(msg=''):
     resp = input(msg).lower()
@@ -15,8 +15,8 @@ def question(msg=''):
 
 def getNumber(msg=''):
     while True:
-        valor = input(msg)
+        value = input(msg)
         try:
-            return int(valor)
+            return int(value)
         except ValueError as erro:
             delay(changeColor('Digite um número válido!', 'red'))

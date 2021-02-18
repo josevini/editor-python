@@ -23,7 +23,7 @@ def message(msg='', char='-'):
     print(f'{msg.center(size)}')
     toDesign(char, size)
 
-def changeColor(text='', cor='black'):
+def changeColor(text='', color='black'):
     colors = {
         'black': '\033[30m',
         'red': '\033[31m',
@@ -33,11 +33,11 @@ def changeColor(text='', cor='black'):
         'purple': '\033[35m',
         'gray': '\033[37m'
     }
-    open = colors[cor]
+    open = colors[color]
     close = '\033[m'
     return f'{open}{text}{close}'
 
-def interval(valor, min, max):
-    if min <= valor <= max:
-        return valor
+def interval(value, min, max):
+    if min <= value <= max:
+        return value
     print(changeColor(f'Digite um valor entre {min} e {max}', 'red'))
