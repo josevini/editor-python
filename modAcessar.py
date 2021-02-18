@@ -38,7 +38,7 @@ def menuAcessar():
         toDesign('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja acessar um arquivo ou pasta?')
         toDesign('-', 42)
-        op = intervalo(getNumber('Escolha uma opção: '), 0, 2)
+        op = interval(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
             delay(changeColor('Cancelando...', 'red'))
             break

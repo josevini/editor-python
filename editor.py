@@ -8,7 +8,7 @@ def menu():
         message('MENU PRINCIPAL')
         createMenu('criar', 'apagar', 'acessar', 'editar', stop='sair')
         toDesign('-', 42)
-        op = intervalo(getNumber('Escolha uma opção: '), 0, 4)
+        op = interval(getNumber('Escolha uma opção: '), 0, 4)
         if op == 0:
             break
         elif op == 1:

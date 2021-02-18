@@ -18,10 +18,10 @@ def toDesign(simb='', qtd=0):
     print(simb * qtd)
 
 def message(msg='', char='-'):
-    tamanho = len(msg) * 3
-    toDesign(char, tamanho)
-    print(f'{msg.center(tamanho)}')
-    toDesign(char, tamanho)
+    size = len(msg) * 3
+    toDesign(char, size)
+    print(f'{msg.center(size)}')
+    toDesign(char, size)
 
 def changeColor(text='', cor='black'):
     colors = {
@@ -37,7 +37,7 @@ def changeColor(text='', cor='black'):
     close = '\033[m'
     return f'{open}{text}{close}'
 
-def intervalo(valor, min, max):
+def interval(valor, min, max):
     if min <= valor <= max:
         return valor
     print(changeColor(f'Digite um valor entre {min} e {max}', 'red'))
