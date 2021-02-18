@@ -5,7 +5,7 @@ from modExibe import *
 
 def acessarArquivo():
     while True:
-        nome, ext = os.path.splitext(entradaTexto('Quer ler qual arquivo: '))
+        nome, ext = os.path.splitext(getText('Quer ler qual arquivo: '))
         filename = (nome+ext) if ext else (nome+'.txt')
         try:
             with open(filename, 'r', encoding='utf-8') as file:
@@ -19,7 +19,7 @@ def acessarArquivo():
 
 def acessarPasta():
     while True:
-        dirname = entradaTexto('Quer listar qual pasta: ')
+        dirname = getText('Quer listar qual pasta: ')
         try:
             listagem = os.listdir(dirname)
             desenha('-', 42)
@@ -38,7 +38,7 @@ def menuAcessar():
         desenha('-', 42)
         geraMenu('arquivo', 'pasta', msg='Deseja acessar um arquivo ou pasta?')
         desenha('-', 42)
-        op = intervalo(entrada('Escolha uma opção: '), 0, 2)
+        op = intervalo(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
             atrasar(mudaCor('Cancelando...', 'red'))
             break
