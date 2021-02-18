@@ -1,10 +1,10 @@
 from modExibe import *
 
-def entradaTexto(msg=''):
+def getText(msg=''):
     valor = input(msg)
     return valor
 
-def pergunta(msg=''):
+def question(msg=''):
     resp = input(msg).lower()
     if resp == 's':
         return True
@@ -13,7 +13,7 @@ def pergunta(msg=''):
     else:
         atrasar(mudaCor('Opção inválida!', 'red'))
 
-def entrada(msg=''):
+def getNumber(msg=''):
     while True:
         valor = input(msg)
         try:
