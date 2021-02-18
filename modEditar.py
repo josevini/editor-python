@@ -5,12 +5,12 @@ from modExibe import *
 
 def editarArquivo():
     while True:
-        desenha('-', 42)
-        geraMenu('Renomear', 'Editar conteúdo', msg='Opções disponíveis para edição')
-        desenha('-', 42)
+        toDesign('-', 42)
+        createMenu('Renomear', 'Editar conteúdo', msg='Opções disponíveis para edição')
+        toDesign('-', 42)
         op = intervalo(getNumber('Escolha a opção: '), 0, 2)
         if op == 0:
-            atrasar(mudaCor('Cancelando...', 'red'))
+            delay(changeColor('Cancelando...', 'red'))
         elif op == 1:
             pass
         elif op == 2:
@@ -20,12 +20,12 @@ def editarPasta():
 
 def menuEditar():
     while True:
-        desenha('-', 42)
-        geraMenu('arquivo', 'pasta', msg='Deseja editar um arquivo ou pasta?')
-        desenha('-', 42)
+        toDesign('-', 42)
+        createMenu('arquivo', 'pasta', msg='Deseja editar um arquivo ou pasta?')
+        toDesign('-', 42)
         op = intervalo(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
-            atrasar(mudaCor('Cancelando...', 'red'))
+            delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
             editarArquivo()

@@ -6,46 +6,46 @@ from modExibe import *
 def apagarArquivo():
     nome, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
     filename = (nome + ext) if ext else (nome + '.txt')
-    atrasar(mudaCor('Processando...', 'yellow'))
+    delay(changeColor('Processando...', 'yellow'))
     if os.path.exists(filename):
         if os.path.getsize(filename) > 0:
-            continuar = question(mudaCor('O arquivo não está vazio, quer continuar? [s/n]: ', 'yellow'))
+            continuar = question(changeColor('O arquivo não está vazio, quer continuar? [s/n]: ', 'yellow'))
             if continuar:
                 os.remove(filename)
-                atrasar(mudaCor(f'Apagando o arquivo {filename}...', 'yellow'), 1.3)
-                atrasar(mudaCor(f'Arquivo {filename} apagado!', 'green'))
+                delay(changeColor(f'Apagando o arquivo {filename}...', 'yellow'), 1.3)
+                delay(changeColor(f'Arquivo {filename} apagado!', 'green'))
             else:
-                atrasar(mudaCor('Nenhum arquivo foi apagado!', 'red'))
+                delay(changeColor('Nenhum arquivo foi apagado!', 'red'))
         else:
             os.remove(filename)
-            atrasar(mudaCor(f'Apagando o arquivo {filename}...', 'yellow'), 1.3)
-            atrasar(mudaCor(f'Arquivo {filename} apagado!', 'green'))
+            delay(changeColor(f'Apagando o arquivo {filename}...', 'yellow'), 1.3)
+            delay(changeColor(f'Arquivo {filename} apagado!', 'green'))
     else:
-        atrasar(mudaCor('Arquivo não encontrado!', 'red'))
+        delay(changeColor('Arquivo não encontrado!', 'red'))
 
 def apagarPasta():
     dirname = getText('Informe o nome da pasta: ')
-    continuar = question(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+    continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
     if continuar:
-        atrasar(mudaCor(f'Apagando a pasta {dirname}...', 'yellow'), 1.3)
+        delay(changeColor(f'Apagando a pasta {dirname}...', 'yellow'), 1.3)
         try:
             os.rmdir(dirname)
-            atrasar(mudaCor(f'Pasta {dirname} apagada!', 'green'))
+            delay(changeColor(f'Pasta {dirname} apagada!', 'green'))
         except FileNotFoundError:
-            atrasar(mudaCor('Essa pasta não existe!', 'red'))
+            delay(changeColor('Essa pasta não existe!', 'red'))
         except OSError:
-            atrasar(mudaCor('A pasta não está vazia!', 'red'))
+            delay(changeColor('A pasta não está vazia!', 'red'))
     else:
-        atrasar(mudaCor('Cancelando...', 'red'))
+        delay(changeColor('Cancelando...', 'red'))
 
 def menuApagar():
     while True:
-        desenha('-', 42)
-        geraMenu('arquivo', 'pasta', msg='Deseja apagar um arquivo ou pasta?')
-        desenha('-', 42)
+        toDesign('-', 42)
+        createMenu('arquivo', 'pasta', msg='Deseja apagar um arquivo ou pasta?')
+        toDesign('-', 42)
         op = intervalo(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
-            atrasar(mudaCor('Cancelando...', 'red'))
+            delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
             apagarArquivo()

@@ -1,30 +1,30 @@
 import time
 
-def geraMenu(*ops, stop='cancelar', msg=''):
+def createMenu(*ops, stop='cancelar', msg=''):
     if msg:
         print(msg)
     for pos, op in enumerate(ops):
         print(f'{pos + 1} - {op.capitalize() if op else "default"}')
     print(f'0 - {stop.capitalize()}')
 
-def exibir(msg=''):
+def show(msg=''):
     print(msg)
 
-def atrasar(msg='', seg=1.0):
+def delay(msg='', seg=1.0):
     print(msg)
     time.sleep(seg)
 
-def desenha(simb='', qtd=0):
+def toDesign(simb='', qtd=0):
     print(simb * qtd)
 
-def mensagem(msg='', char='-'):
+def message(msg='', char='-'):
     tamanho = len(msg) * 3
-    desenha(char, tamanho)
+    toDesign(char, tamanho)
     print(f'{msg.center(tamanho)}')
-    desenha(char, tamanho)
+    toDesign(char, tamanho)
 
-def mudaCor(text='', cor='black'):
-    cores = {
+def changeColor(text='', cor='black'):
+    colors = {
         'black': '\033[30m',
         'red': '\033[31m',
         'green': '\033[32m',
@@ -33,11 +33,11 @@ def mudaCor(text='', cor='black'):
         'purple': '\033[35m',
         'gray': '\033[37m'
     }
-    abre = cores[cor]
-    fecha = '\033[m'
-    return f'{abre}{text}{fecha}'
+    open = colors[cor]
+    close = '\033[m'
+    return f'{open}{text}{close}'
 
 def intervalo(valor, min, max):
     if min <= valor <= max:
         return valor
-    print(mudaCor(f'Digite um valor entre {min} e {max}', 'red'))
+    print(changeColor(f'Digite um valor entre {min} e {max}', 'red'))

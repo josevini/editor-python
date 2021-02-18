@@ -6,52 +6,52 @@ from modExibe import *
 def criarArquivo():
     total = getNumber('Quantos arquivos: ')
     while total > 0:
-        desenha('-', 42)
+        toDesign('-', 42)
         nome, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
-        continuar = question(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+        continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
         if continuar:
             filename = (nome + ext) if ext else (nome + '.txt')
-            atrasar(mudaCor('Processando...', 'yellow'))
+            delay(changeColor('Processando...', 'yellow'))
             if os.path.exists(filename):
-                resp = question(mudaCor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
+                resp = question(changeColor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
                 if resp:
-                    atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.3)
+                    delay(changeColor(f'Criando arquivo {filename}...', 'yellow'), 1.3)
                     file = open(filename, 'w', encoding='utf-8')
-                    atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'))
+                    delay(changeColor(f'Arquivo {filename} criado!', 'green'))
                 else:
-                    atrasar(mudaCor('Nenhum arquivo foi criado!', 'red'))
+                    delay(changeColor('Nenhum arquivo foi criado!', 'red'))
             else:
-                atrasar(mudaCor(f'Criando arquivo {filename}...', 'yellow'), 1.3)
+                delay(changeColor(f'Criando arquivo {filename}...', 'yellow'), 1.3)
                 file = open(filename, 'w', encoding='utf-8')
-                atrasar(mudaCor(f'Arquivo {filename} criado!', 'green'))
+                delay(changeColor(f'Arquivo {filename} criado!', 'green'))
         else:
-            atrasar(mudaCor('Cancelando...', 'red'), 1.3)
+            delay(changeColor('Cancelando...', 'red'), 1.3)
         total -= 1
 
 def criarPasta():
     while True:
         dirname = getText('Informe o nome da pasta: ')
-        continuar = question(mudaCor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
+        continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
         if continuar:
-            atrasar(mudaCor(f'Criando a pasta {dirname}...', 'yellow'), 1.3)
+            delay(changeColor(f'Criando a pasta {dirname}...', 'yellow'), 1.3)
             try:
                 os.mkdir(dirname)
-                atrasar(mudaCor(f'Pasta {dirname} criada!', 'green'))
+                delay(changeColor(f'Pasta {dirname} criada!', 'green'))
                 break
             except FileExistsError:
-                atrasar(mudaCor('Ops! Pasta encontrada, tente outro nome!', 'yellow'))
-                desenha('-', 42)
+                delay(changeColor('Ops! Pasta encontrada, tente outro nome!', 'yellow'))
+                toDesign('-', 42)
         else:
-            atrasar(mudaCor('Cancelando...', 'red'))
+            delay(changeColor('Cancelando...', 'red'))
             break
 def menuCriar():
     while True:
-        desenha('-', 42)
-        geraMenu('arquivo', 'pasta', msg='Deseja criar um arquivo ou pasta?')
-        desenha('-', 42)
+        toDesign('-', 42)
+        createMenu('arquivo', 'pasta', msg='Deseja criar um arquivo ou pasta?')
+        toDesign('-', 42)
         op = intervalo(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
-            atrasar(mudaCor('Cancelando...', 'red'))
+            delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
             criarArquivo()

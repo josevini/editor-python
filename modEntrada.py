@@ -11,7 +11,7 @@ def question(msg=''):
     elif resp == 'n':
         return False
     else:
-        atrasar(mudaCor('Opção inválida!', 'red'))
+        delay(changeColor('Opção inválida!', 'red'))
 
 def getNumber(msg=''):
     while True:
@@ -19,4 +19,4 @@ def getNumber(msg=''):
         try:
             return int(valor)
         except ValueError as erro:
-            atrasar(mudaCor('Digite um número válido!', 'red'))
+            delay(changeColor('Digite um número válido!', 'red'))

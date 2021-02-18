@@ -5,9 +5,9 @@ from modEditar import *
 
 def menu():
     while True:
-        mensagem('MENU PRINCIPAL')
-        geraMenu('criar', 'apagar', 'acessar', 'editar', stop='sair')
-        desenha('-', 42)
+        message('MENU PRINCIPAL')
+        createMenu('criar', 'apagar', 'acessar', 'editar', stop='sair')
+        toDesign('-', 42)
         op = intervalo(getNumber('Escolha uma opção: '), 0, 4)
         if op == 0:
             break
