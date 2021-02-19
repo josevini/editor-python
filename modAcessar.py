@@ -1,6 +1,6 @@
 import os
 import os.path
-from modEntrada import *
+from modInput import *
 from modShow import *
 
 def accessFile():
