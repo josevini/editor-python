@@ -1,6 +1,6 @@
 from modCreate import *
 from modDelete import *
-from modAcessar import *
+from modAccess import *
 from modEditar import *
 
 def menu():
