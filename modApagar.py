@@ -50,4 +50,4 @@ def menuApagar():
         elif op == 1:
             deleteFile()
         elif op == 2:
-            apagarPasta()
+            deleteDir()
