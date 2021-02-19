@@ -23,7 +23,7 @@ def deleteFile():
     else:
         delay(changeColor('Arquivo não encontrado!', 'red'))
 
-def apagarPasta():
+def deleteDir():
     dirname = getText('Informe o nome da pasta: ')
     continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
     if continuar:
