@@ -3,7 +3,7 @@ import os.path
 from modEntrada import *
 from modExibe import *
 
-def criarArquivo():
+def createFile():
     total = getNumber('Quantos arquivos: ')
     while total > 0:
         toDesign('-', 42)
