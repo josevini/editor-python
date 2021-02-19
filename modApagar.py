@@ -1,7 +1,7 @@
 import os
 import os.path
 from modEntrada import *
-from modExibe import *
+from modShow import *
 
 def deleteFile():
     nome, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
