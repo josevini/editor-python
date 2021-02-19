@@ -1,5 +1,5 @@
 from modCreate import *
-from modApagar import *
+from modDelete import *
 from modAcessar import *
 from modEditar import *
 
