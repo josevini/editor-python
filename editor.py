@@ -1,7 +1,7 @@
 from modCreate import *
 from modDelete import *
 from modAccess import *
-from modEditar import *
+from modEdit import *
 
 def menu():
     while True:
