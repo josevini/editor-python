@@ -1,4 +1,4 @@
-from modCriar import *
+from modCreate import *
 from modApagar import *
 from modAcessar import *
 from modEditar import *
