@@ -54,6 +54,6 @@ def menuCriar():
             delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
-            criarArquivo()
+            createFile()
         elif op == 2:
             criarPasta()
