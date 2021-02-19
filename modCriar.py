@@ -28,7 +28,7 @@ def createFile():
             delay(changeColor('Cancelando...', 'red'), 1.3)
         total -= 1
 
-def criarPasta():
+def createDir():
     while True:
         dirname = getText('Informe o nome da pasta: ')
         continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
@@ -56,4 +56,4 @@ def menuCriar():
         elif op == 1:
             createFile()
         elif op == 2:
-            criarPasta()
+            createDir()
