@@ -38,7 +38,7 @@ def deleteDir():
     else:
         delay(changeColor('Cancelando...', 'red'))
 
-def menuApagar():
+def menuDelete():
     while True:
         toDesign('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja apagar um arquivo ou pasta?')
