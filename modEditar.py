@@ -3,7 +3,7 @@ import os.path
 from modEntrada import *
 from modExibe import *
 
-def editarArquivo():
+def editFile():
     while True:
         toDesign('-', 42)
         createMenu('Renomear', 'Editar conteúdo', msg='Opções disponíveis para edição')
@@ -28,6 +28,6 @@ def menuEditar():
             delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
-            editarArquivo()
+            editFile()
         elif op == 2:
             editarPasta()
