@@ -1,4 +1,4 @@
-from modExibe import *
+from modShow import *
 
 def getText(msg=''):
     value = input(msg)
