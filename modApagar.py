@@ -3,7 +3,7 @@ import os.path
 from modEntrada import *
 from modExibe import *
 
-def apagarArquivo():
+def deleteFile():
     nome, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
     filename = (nome + ext) if ext else (nome + '.txt')
     delay(changeColor('Processando...', 'yellow'))
@@ -48,6 +48,6 @@ def menuApagar():
             delay(changeColor('Cancelando...', 'red'))
             break
         elif op == 1:
-            apagarArquivo()
+            deleteFile()
         elif op == 2:
             apagarPasta()
