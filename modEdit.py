@@ -30,7 +30,10 @@ def editFile():
         elif op == 2:
             name, ext = os.path.splitext(getText('Quer renomear qual arquivo? '))
             filename = name + ext if ext else name + '.txt'
-            
+            if os.path.exists(filename):
+                pass
+            else:
+                delay(changeColor('Arquivo não encontrado!', 'red'))
 
 def editarPasta():
     pass
