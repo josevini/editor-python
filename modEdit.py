@@ -45,6 +45,10 @@ def editarPasta():
     dirname = getText('Qual o nome da pasta? ')
     if os.path.exists(dirname):
         newDirname = getText('Informe o novo nome: ')
+        try:
+            os.rename(dirname, newDirname)
+        except Exception:
+            print('Deu merda!')
     else:
         delay(changeColor('Pasta não encontrada!', 'red'))
 
