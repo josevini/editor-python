@@ -32,6 +32,10 @@ def editFile():
             filename = name + ext if ext else name + '.txt'
             if os.path.exists(filename):
                 newContent = getText('Digite aqui: ')
+                with open(filename, 'r', encoding='utf-8') as file:
+                    content = file.read()
+                    with open(filename, 'w', encoding='utf-8') as newFile:
+                        newFile.write(f'{content} {newContent}' if content else newContent)
             else:
                 delay(changeColor('Arquivo não encontrado!', 'red'))
 
