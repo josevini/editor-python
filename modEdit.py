@@ -39,7 +39,7 @@ def editFile():
         elif op == 1:
             renameFile()
         elif op == 2:
-            pass
+            editContentFile()
 
 def editarPasta():
     pass
