@@ -47,8 +47,8 @@ def editarPasta():
         newDirname = getText('Informe o novo nome: ')
         try:
             os.rename(dirname, newDirname)
-        except Exception:
-            print('Deu merda!')
+        except FileExistsError:
+            delay(changeColor('Arquivo já existe!', 'red'))
     else:
         delay(changeColor('Pasta não encontrada!', 'red'))
 
