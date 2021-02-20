@@ -31,10 +31,7 @@ def editFile():
             name, ext = os.path.splitext(getText('Quer renomear qual arquivo? '))
             filename = name + ext if ext else name + '.txt'
             if os.path.exists(filename):
-                with open(filename, 'r', encoding='utf-8') as file:
-                    content = file.read()
-                    with open(filename, 'w', encoding='utf-8') as newFile:
-                        newFile.write(content)
+                newContent = getText('Digite aqui: ')
             else:
                 delay(changeColor('Arquivo não encontrado!', 'red'))
 
