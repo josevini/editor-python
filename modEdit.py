@@ -3,6 +3,19 @@ import os.path
 from modInput import *
 from modShow import *
 
+def renameFile():
+    name, ext = os.path.splitext(getText('Quer renomear qual arquivo? '))
+    filename = name+ext if ext else name+'.txt'
+    if os.path.exists(filename):
+        newName, newExt = os.path.splitext(getText('Informe o novo nome: '))
+        newFilename = newName+newExt if newExt else newName+'.txt'
+        try:
+            os.rename(filename, newFilename)
+        except FileExistsError:
+            delay(changeColor('Arquivo já existe!', 'red'))
+    else:
+        delay(changeColor('Arquivo não encontrado!', 'red'))
+
 def editFile():
     while True:
         toDesign('-', 42)
@@ -11,10 +24,14 @@ def editFile():
         op = interval(getNumber('Escolha a opção: '), 0, 2)
         if op == 0:
             delay(changeColor('Cancelando...', 'red'))
+            break
         elif op == 1:
-            pass
+            renameFile()
         elif op == 2:
-            pass
+            name, ext = os.path.splitext(getText('Quer renomear qual arquivo? '))
+            filename = name + ext if ext else name + '.txt'
+            
+
 def editarPasta():
     pass
 
