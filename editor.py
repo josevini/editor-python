@@ -14,7 +14,7 @@ def menu():
         elif op == 1:
             menuCriar()
         elif op == 2:
-            menuApagar()
+            menuDelete()
         elif op == 3:
             menuAccess()
         elif op == 4:
