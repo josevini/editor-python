@@ -6,7 +6,7 @@ from modShow import *
 def createFile():
     total = getNumber('Quantos arquivos: ')
     while total > 0:
-        toDesign('-', 42)
+        line('-', 42)
         name, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
         continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
         if continuar:
@@ -40,15 +40,15 @@ def createDir():
                 break
             except FileExistsError:
                 delay(changeColor('Ops! Pasta encontrada, tente outro nome!', 'yellow'))
-                toDesign('-', 42)
+                line('-', 42)
         else:
             delay(changeColor('Cancelando...', 'red'))
             break
 def menuCreate():
     while True:
-        toDesign('-', 42)
+        line('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja criar um arquivo ou pasta?')
-        toDesign('-', 42)
+        line('-', 42)
         op = interval(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
             delay(changeColor('Cancelando...', 'red'))
