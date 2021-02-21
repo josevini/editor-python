@@ -9,7 +9,7 @@ def accessFile():
         filename = (name + ext) if ext else (name + '.txt')
         try:
             with open(filename, 'r', encoding='utf-8') as file:
-                toDesign('-', 42)
+                line('-', 42)
                 delay('CONTEÚDO:', 0)
                 content = file.read()
                 show(changeColor(content if content else 'Vazio!', 'blue'))
@@ -24,7 +24,7 @@ def accessDir():
         dirname = getText('Quer listar qual pasta: ')
         try:
             listingResult = os.listdir(dirname)
-            toDesign('-', 42)
+            line('-', 42)
             show('CONTEÚDO:')
             if listingResult:
                 for dir in listingResult:
@@ -37,9 +37,9 @@ def accessDir():
 
 def menuAccess():
     while True:
-        toDesign('-', 42)
+        line('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja acessar um arquivo ou pasta?')
-        toDesign('-', 42)
+        line('-', 42)
         op = interval(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
             delay(changeColor('Cancelando...', 'red'))
