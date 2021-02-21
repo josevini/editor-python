@@ -17,8 +17,7 @@ def delay(msg='', seg=1.0):
 def line(simb='', qtd=0):
     print(simb * qtd)
 
-def header(msg='', char='-'):
-    size = len(msg) * 3
+def header(msg='', char='-', size=0):
     line(char, size)
     print(f'{msg.center(size)}')
     line(char, size)
