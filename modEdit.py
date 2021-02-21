@@ -52,7 +52,7 @@ def editarPasta():
     else:
         delay(changeColor('Pasta não encontrada!', 'red'))
 
-def menuEditar():
+def menuEdit():
     while True:
         toDesign('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja editar um arquivo ou pasta?')
