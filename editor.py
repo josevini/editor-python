@@ -12,7 +12,7 @@ def menu():
         if op == 0:
             break
         elif op == 1:
-            menuCriar()
+            menuCreate()
         elif op == 2:
             menuEdit()
         elif op == 3:
