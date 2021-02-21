@@ -17,7 +17,7 @@ def delay(msg='', seg=1.0):
 def toDesign(simb='', qtd=0):
     print(simb * qtd)
 
-def message(msg='', char='-'):
+def header(msg='', char='-'):
     size = len(msg) * 3
     toDesign(char, size)
     print(f'{msg.center(size)}')
