@@ -14,14 +14,14 @@ def delay(msg='', seg=1.0):
     print(msg)
     time.sleep(seg)
 
-def toDesign(simb='', qtd=0):
+def line(simb='', qtd=0):
     print(simb * qtd)
 
 def header(msg='', char='-'):
     size = len(msg) * 3
-    toDesign(char, size)
+    line(char, size)
     print(f'{msg.center(size)}')
-    toDesign(char, size)
+    line(char, size)
 
 def changeColor(text='', color='black'):
     colors = {
