@@ -40,9 +40,9 @@ def deleteDir():
 
 def menuDelete():
     while True:
-        toDesign('-', 42)
+        line('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja apagar um arquivo ou pasta?')
-        toDesign('-', 42)
+        line('-', 42)
         op = interval(getNumber('Escolha uma opção: '), 0, 2)
         if op == 0:
             delay(changeColor('Cancelando...', 'red'))
