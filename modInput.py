@@ -5,10 +5,10 @@ def getText(msg=''):
     return value
 
 def question(msg=''):
-    resp = input(msg).lower()
-    if resp == 's':
+    response = input(msg).lower()
+    if response == 's':
         return True
-    elif resp == 'n':
+    elif response == 'n':
         return False
     else:
         delay(changeColor('Opção inválida!', 'red'))
