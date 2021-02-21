@@ -7,10 +7,10 @@ def createFile():
     total = getNumber('Quantos arquivos: ')
     while total > 0:
         toDesign('-', 42)
-        nome, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
+        name, ext = os.path.splitext(getText('Informe o nome do arquivo: '))
         continuar = question(changeColor('Deseja prosseguir com a ação? [s/n]: ', 'yellow'))
         if continuar:
-            filename = (nome + ext) if ext else (nome + '.txt')
+            filename = (name + ext) if ext else (name + '.txt')
             delay(changeColor('Processando...', 'yellow'))
             if os.path.exists(filename):
                 resp = question(changeColor('Arquivo encontrado! Quer sobrescrever? [s/n]: ', 'yellow'))
