@@ -7,7 +7,7 @@ def menu():
     while True:
         header('MENU PRINCIPAL')
         createMenu('criar', 'editar', 'acessar', 'apagar', stop='sair')
-        toDesign('-', 42)
+        line('-', 42)
         op = interval(getNumber('Escolha uma opção: '), 0, 4)
         if op == 0:
             break
