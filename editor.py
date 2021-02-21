@@ -5,7 +5,7 @@ from modEdit import *
 
 def menu():
     while True:
-        message('MENU PRINCIPAL')
+        header('MENU PRINCIPAL')
         createMenu('criar', 'editar', 'acessar', 'apagar', stop='sair')
         toDesign('-', 42)
         op = interval(getNumber('Escolha uma opção: '), 0, 4)
