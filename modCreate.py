@@ -44,7 +44,7 @@ def createDir():
         else:
             delay(changeColor('Cancelando...', 'red'))
             break
-def menuCriar():
+def menuCreate():
     while True:
         toDesign('-', 42)
         createMenu('arquivo', 'pasta', msg='Deseja criar um arquivo ou pasta?')
