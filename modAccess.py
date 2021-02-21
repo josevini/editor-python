@@ -16,6 +16,8 @@ def accessFile():
                 break
         except FileNotFoundError:
             delay(changeColor('Arquivo não encontrado!', 'red'))
+        except UnicodeDecodeError:
+            delay(changeColor('Formato de arquivo não suportado!', 'red'))
 
 def accessDir():
     while True:
