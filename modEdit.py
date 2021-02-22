@@ -16,14 +16,12 @@ def renameFile():
     else:
         delay(changeColor('Arquivo não encontrado!', 'red'))
 def editContentFile():
-    name, ext = os.path.splitext(getText('Quer renomear qual arquivo? '))
+    name, ext = os.path.splitext(getText('Quer editar qual arquivo? '))
     filename = name + ext if ext else name + '.txt'
     if os.path.exists(filename):
-        newContent = getText('Digite aqui: ')
-        with open(filename, 'r', encoding='utf-8') as file:
-            content = file.read()
-            with open(filename, 'w', encoding='utf-8') as newFile:
-                newFile.write(f'{content} {newContent}' if content else newContent)
+        with open(filename, 'a', encoding='utf-8') as file:
+            content = getText('Digite aqui: ')
+            file.write(content)
     else:
         delay(changeColor('Arquivo não encontrado!', 'red'))
 
@@ -41,7 +39,7 @@ def editFile():
         elif op == 2:
             editContentFile()
 
-def editarPasta():
+def editFolder():
     dirname = getText('Qual o nome da pasta? ')
     if os.path.exists(dirname):
         newDirname = getText('Informe o novo nome: ')
@@ -64,4 +62,4 @@ def menuEdit():
         elif op == 1:
             editFile()
         elif op == 2:
-            editarPasta()
+            editFolder()
